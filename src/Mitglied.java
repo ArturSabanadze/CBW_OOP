@@ -16,6 +16,10 @@ public class Mitglied {
         this.alter = alter;
     }
 
+    public int getAlter() {
+        return alter;
+    }
+
     public String formatZeile()
     {
         return String.format("%-10s%-20s%-15s%-5s%n",idNummer, nachname, vorname, alter);
