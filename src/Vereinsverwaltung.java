@@ -1,12 +1,8 @@
-import javax.swing.*;
 import java.util.Scanner;
 
-public class Vereinsverwaltung
-{
-    public static void main(String[] args)
-    {
+public class Vereinsverwaltung {
+    public static void main(String[] args) {
         MitgliedVerwaltung mV = new MitgliedVerwaltung();
-
         Scanner scanner = new Scanner(System.in);
 
         int id_Nummer;
@@ -14,9 +10,7 @@ public class Vereinsverwaltung
         String vorname;
         int alter;
 
-
-        while(true)
-        {
+        while (true) {
             System.out.print("\nGeben Sie die Id_Nummer ein: ");
             id_Nummer = scanner.nextInt();
             scanner.nextLine();
@@ -32,26 +26,21 @@ public class Vereinsverwaltung
             scanner.nextLine();
 
             Mitglied member = new Mitglied(id_Nummer, nachname, vorname, alter);
-
             mV.addMitglied(member);
+            String antwort = mV.bestaetigungFragen(scanner);
 
-            String antwort = mV.bestätigungFragen(scanner);
-
-            if(antwort.equalsIgnoreCase("n"))
-            {
+            if(antwort.equalsIgnoreCase("n")) {
                 System.out.println("\nMöchten Sie die Mitgliederliste anzeigen? ");
                 break;
             }
         }
 
-        String auswahl = mV.bestätigungFragen(scanner);
+        String auswahl = mV.bestaetigungFragen(scanner);
 
-        if(auswahl.equalsIgnoreCase("n"))
-        {
+        if (auswahl.equalsIgnoreCase("n")) {
             System.out.println("\nProgramm wird beendet. Danke!");
         }
-        else
-        {
+        else {
             mV.anzeigen();
         }
         scanner.close();

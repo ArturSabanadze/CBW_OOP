@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class Mitglied {
 
-    int idNummer;
-    String nachname;
-    String vorname;
+    private int idNummer;
+    private String nachname;
+    private String vorname;
     int alter;
 
 
